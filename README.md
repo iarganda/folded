@@ -56,9 +56,9 @@ When exporting each file, it is recommended to check that the generated raster i
 ## User options
 When executed, the ‘folded’ script provides a comprehensive menu with some parameters that could be customized according to the user’s needs.
 
-<p align="center">
-<img src="./images/documentation/gui.jpg" style="width:400px;" />
-</p>
+| ![folded script user interface](./images/documentation/gui.jpg) | 
+|:--:| 
+| **'folded' script user interface** |
 
 It includes the following parameters:
 * **‘Select input directory’**: directory where the set of images are located. 
