@@ -36,7 +36,7 @@ You can find the latest version of Fiji in the following [link](https://imagej.n
 Additional information on how to install plugins in Fiji manually can be found in the following link: https://imagej.net/plugins/.
 
 ### Script installation
-Once Fiji and the two auxiliary plugins are installed, the file ‘folded_.bsh’ can be downloaded from the [Github repository](https://github.com/iarganda/folded). Next, copy the file to the directory \<Fiji root\>/plugins/Scripts/Plugins/Analyze/ (you may need to create it) and restart Fiji. The script then appears as a new command under the menu [Plugins/Analyze] (in the last position of the menu). 
+Once Fiji and the two auxiliary plugins are installed, the file [‘folded_.bsh’](https://github.com/iarganda/folded/releases/download/v1.0.0/folded_.bsh) can be downloaded from the project latest [release](https://github.com/iarganda/folded/releases/download/v1.0.0/folded_.bsh). Next, copy the file to the directory \<Fiji root\>/plugins/Scripts/Plugins/Analyze/ (you may need to create it) and restart Fiji. The script then appears as a new command under the menu [Plugins/Analyze] (in the last position of the menu). 
 
 If you are not able to find the root directory of your Fiji installation or you don't have permissions to copy the file there, do not worry. You can open the script Editor ([File > New > Script]) and load the file into the script editor by the [File > Open] menu of the editor. Then click on the “Run” button and the script will be executed.
 
