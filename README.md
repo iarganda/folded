@@ -62,7 +62,7 @@ When executed, the ‘folded’ script provides a comprehensive menu with some p
 
 | ![folded script user interface](./images/documentation/gui.jpg) | 
 |:--:| 
-| **'Figure S2: folded' script user interface.** |
+| **Figure S2: 'folded' script user interface.** |
 
 It includes the following parameters:
 * **‘Select input directory’**: directory where the set of images are located. 
@@ -94,7 +94,7 @@ The script generates a folder for each analyzed image (here exemplified as ```�
 * ```‘ImageFileName_orientation.jpg’```: an ancillary image showing the different orientations in grayscale format.
 * ```‘ImageFileName_orientationRGB.tif’```: the resulting image in RGB color mode from the OrientationJ plugin (Figure 2H).
 * ```‘ImageFileName_skeleton.tif’```: a binary image showing the resulting skeleton from the ‘skeletonization’ process shown in Figure 2E.
-* ```‘ImageFileName_thickness.tif’```: a grayscale image with the result of the LocalThickness plugin ( Figure 2F).
+* ```‘ImageFileName_thickness.tif’```: a grayscale image with the result of the LocalThickness plugin (Figure 2F).
 * ```‘ImageFileName_kmeans.tif’```: an RGB color image with the results of the k-means algorithm and the 2D orientation patch count (Figure 2I).
 
 In addition, a series of data tables in csv format are generated. Some of them include pixel-by-pixel values, useful for intra-tooth analyses, and a summary file ```‘ImageFileName_summary.csv’``` with all the information from that specific specimen compiled). The list of tables is as follows:
