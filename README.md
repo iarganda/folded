@@ -41,3 +41,29 @@ Manually tracing images is prone to some intrinsic errors like the steadiness of
 When exporting each file, it is recommended to check that the generated raster image has at least ~1,000 pixels (along the largest dimension) to make results reliable, as image size effect is negligible above 500 pixels for the studied dataset (as demonstrated In Supplementary Data S2). Large images above 1,000 pixels will be downsampled by the script automatically. Once the images are traced, the file name should follow the pattern: 
 
 ```‘Genus_species_scaleXXmm.jpg’```, where XX is the length of the scale included in the image as a dark gray bar (```#1E1E1E```) in the units defined in the file name (in this case millimeters). An example of the file name would be ```‘Dihoplus_schleiermacheri_scale20mm.jpg’```. All the traced images should be included in a single directory. Do not include any other images that will not be processed. All the reference images used in the examples included in this work can be found in the following [link](https://github.com/iarganda/folded/tree/main/images/datasets).
+
+## ‘folded’ user options
+When executed, the ‘folded’ script provides a comprehensive menu with some parameters that could be customized according to the user’s needs.
+
+<p align="center">
+<img src="./images/documentation/gui.jpg" style="width:400px;" />
+</p>
+
+It includes the following parameters:
+* **‘Select input directory’**: directory where the set of images are located. 
+* **‘Select output directory’**: directory where the output of ‘folder’ will be stored. Typically the same as the previous one.
+* **‘Rescaling size’**: size of the maximum dimension of the image. It is recommended to use values between 1,000-1,500. Below 500 pixels results might not be reliable (see Supplementary Data 2), whereas image sizes beyond 1,500-2,000 pixels slow down some of the processes run by ‘folded’ considerably.
+
+The next values define the grayscale color range [0-255, where 0 corresponds to black and 255 to white] for each one of the structures of the tooth. It is important not to introduce overlapping color ranges:
+* **‘Scale min. pixel value’**: lighter grayscale value of the scale from 0 to 255. Set at 62 by default.
+* **‘Scale max. pixel value’**: darker grayscale value of the scale from 0 to 255. Set at 80 by default.
+* **‘Enamel min. pixel value’**: lighter grayscale value of the enamel area from 0 to 255. Set at 0 by default.
+* **‘Enamel max. pixel value’**: darker grayscale value of the enamel area from 0 to 255. Set at 20 by default.
+* **‘Dentine min. pixel value’**: lighter grayscale value of the dentine area from 0 to 255. Set at 210 by default.
+* **‘Dentine max. pixel value’**: darker grayscale value of the dentine area from 0 to 255. Set at 225 by default.
+* **‘Remaining tooth min. pixel value’**: lighter grayscale value of the remaining tooth’s area (not dentine nor enamel) from 0 to 255. Set at 120 by default.
+* **‘Remaining tooth max. pixel value’**: darker grayscale value of the remaining tooth’s area (not dentine nor enamel) from 0 to 255. Set at 140 by default.
+* **‘Minimum branch length’**: during the ‘skeletonization’ process (Figure 2E), some thick and highly folded enamel curves might generate small secondary branches along the skeleton. Segments smaller than the value (in pixels) shown here will be trimmed. The default value (optimal for the studied sample) is 20 pixels. However, this should be tested on a case by case basis.
+* **‘Store images in 8-bits’**: ‘folded’ makes use of images with 16 bits depth. 16-bits images usually take a considerable amount of hard drive space, especially when working with medium to large datasets. This option allows the user to transform them into 8-bits equivalents for visualization purposes.
+* **‘Verbose’**: show all the steps performed by the script in the form of text inside the ImageJ/Fiji Log window.
+
