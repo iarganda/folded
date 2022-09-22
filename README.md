@@ -1,3 +1,7 @@
+<p align="center">
+<img src="./images/documentation/logo.png" style="width:200px;" />
+</p>
+
 # folded
 Folded: an ImageJ/Fiji toolkit to describe mammalian herbivore dentition from 2D images
 
