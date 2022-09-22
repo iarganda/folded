@@ -7,6 +7,17 @@ Folded: an ImageJ/Fiji toolkit to describe mammalian herbivore dentition from 2D
 
 **Authors**: [Oscar Sanisidro](https://scholar.google.es/citations?user=TLYIuyEAAAAJ&hl=es), [Ignacio Arganda-Carreras](https://www.ikerbasque.net/en/ignacio-arganda-carreras), and [Juan L. Cantalapiedra](https://scholar.google.es/citations?hl=es&user=19hBfQ8AAAAJ)
 
+##### Table of Contents  
+  * [Installation instructions](#installation-instructions)
+    + [Fiji installation](#fiji-installation)
+    + [Installing dependencies](#installing-dependencies)
+    + [Script installation](#script-installation)
+  * [Obtaining reference images](#obtaining-reference-images)
+  * [Tracing reference images](#tracing-reference-images)
+  * [User options](#user-options)
+  * [Tables of results and output information](#tables-of-results-and-output-information)
+  * [Additional analyses outside folded](#additional-analyses-outside-folded)
+
 ## Installation instructions
 ‘folded’ is a script of the open-source image processing software [Fiji](https://fiji.sc/), which is, in turn, a distribution of [ImageJ](http://rsb.info.nih.gov/nih-image). ‘folded’ has been scripted in the BeanShell language.
 ### Fiji installation
@@ -24,7 +35,7 @@ You can find the latest version of Fiji in the following [link](https://imagej.n
 
 Additional information on how to install plugins in Fiji manually can be found in the following link: https://imagej.net/plugins/.
 
-### 'folded' script installation
+### Script installation
 Once Fiji and the two auxiliary plugins are installed, the file ‘folded_.bsh’ can be downloaded from the [Github repository](https://github.com/iarganda/folded). Next, copy the file to the directory \<Fiji root\>/plugins/Scripts/Plugins/Analyze/ (you may need to create it) and restart Fiji. The script then appears as a new command under the menu [Plugins/Analyze] (in the last position of the menu). 
 
 If you are not able to find the root directory of your Fiji installation or you don't have permissions to copy the file there, do not worry. You can open the script Editor ([File > New > Script]) and load the file into the script editor by the [File > Open] menu of the editor. Then click on the “Run” button and the script will be executed.
@@ -42,7 +53,7 @@ When exporting each file, it is recommended to check that the generated raster i
 
 ```‘Genus_species_scaleXXmm.jpg’```, where XX is the length of the scale included in the image as a dark gray bar (```#1E1E1E```) in the units defined in the file name (in this case millimeters). An example of the file name would be ```‘Dihoplus_schleiermacheri_scale20mm.jpg’```. All the traced images should be included in a single directory. Do not include any other images that will not be processed. All the reference images used in the examples included in this work can be found in the following [link](https://github.com/iarganda/folded/tree/main/images/datasets).
 
-## ‘folded’ user options
+## User options
 When executed, the ‘folded’ script provides a comprehensive menu with some parameters that could be customized according to the user’s needs.
 
 <p align="center">
@@ -67,7 +78,7 @@ The next values define the grayscale color range [0-255, where 0 corresponds to 
 * **‘Store images in 8-bits’**: ‘folded’ makes use of images with 16 bits depth. 16-bits images usually take a considerable amount of hard drive space, especially when working with medium to large datasets. This option allows the user to transform them into 8-bits equivalents for visualization purposes.
 * **‘Verbose’**: show all the steps performed by the script in the form of text inside the ImageJ/Fiji Log window.
 
-## ‘folded’ tables of results and output information
+## Tables of results and output information
 The script generates a folder for each analyzed image (here exemplified as ```‘ImageFileName’```) containing the following image files:
 * ```‘ImageFileName_binary.tif’```: the binarized version of the input image used for the skeletonization process and the enamel thickness analysis (Figure 2D-F).
 * ```‘ImageFileName_coherency.tif’```: a grayscale image showing the values resulting from the enamel folding analysis. Lighter colors represent more folded areas (note in the Figure 2G is shown with an inverse pattern for visualization purposes).
@@ -87,5 +98,5 @@ In addition, a series of data tables in csv format are generated. Some of them i
 * ```‘ImageFileName_scale.csv’```: length of the scale included in the images in pixels.
 * ```‘ImageFileName_summary.csv’```: a summary of all the previous csv files for that specific image. It includes the following variables: Scale bar in both pixels and millimeters, occlusal enamel length (OEL), occlusal tooth area (OTA), occlusal enamel index (OEI), enamel index (EI), indentation index (D), 2D OPC, mean folding, total folding, mean thickness (pixels and millimeters). This table contains all the necessary information to quantify complexity by means of ‘folded’.
 
-## Additional analyses outside ‘folded’
+## Additional analyses outside folded
 An R script ```‘folded.R’``` has been included in this Github repository. It merges all the csv data tables into one comprehensive matrix with all the specimens and includes all the necessary code to replicate the main figures and the statistical analyses used through this work. This R script is independent from ‘folded’ and **is not required to run it**.
