@@ -67,3 +67,25 @@ The next values define the grayscale color range [0-255, where 0 corresponds to 
 * **‘Store images in 8-bits’**: ‘folded’ makes use of images with 16 bits depth. 16-bits images usually take a considerable amount of hard drive space, especially when working with medium to large datasets. This option allows the user to transform them into 8-bits equivalents for visualization purposes.
 * **‘Verbose’**: show all the steps performed by the script in the form of text inside the ImageJ/Fiji Log window.
 
+## ‘folded’ tables of results and output information
+The script generates a folder for each analyzed image (here exemplified as ```‘ImageFileName’```) containing the following image files:
+* ```‘ImageFileName_binary.tif’```: the binarized version of the input image used for the skeletonization process and the enamel thickness analysis (Figure 2D-F).
+* ```‘ImageFileName_coherency.tif’```: a grayscale image showing the values resulting from the enamel folding analysis. Lighter colors represent more folded areas (note in the Figure 2G is shown with an inverse pattern for visualization purposes).
+* ```‘ImageFileName_orientation.jpg’```: an ancillary image showing the different orientations in grayscale format.
+* ```‘ImageFileName_orientationRGB.tif’```: the resulting image in RGB color mode from the OrientationJ plugin (Figure 2H).
+* ```‘ImageFileName_skeleton.tif’```: a binary image showing the resulting skeleton from the ‘skeletonization’ process shown in Figure 2E.
+* ```‘ImageFileName_thickness.tif’```: a grayscale image with the result of the LocalThickness plugin ( Figure 2F).
+* ```‘ImageFileName_kmeans.tif’```: an RGB color image with the results of the k-means algorithm and the 2D orientation patch count (Figure 2I).
+
+In addition, a series of data tables in csv format are generated. Some of them include pixel-by-pixel values, useful for intra-tooth analyses, and a summary file ```‘ImageFileName_summary.csv’``` with all the information from that specific specimen compiled). The list of tables is as follows:
+* ```‘ImageFileName_complexity.csv’```: a comma-separated data table with the number of skeleton (equivalent to each region of interest, ROI), branch (subdivision of each ROI), X, Y, and Z coordinates, enamel folding values (‘Folding’), location within the ROI (‘Distance by ROI’) and distance within the linear enamel length (‘Accumulated distance’).
+* ```‘ImageFileName_dentine.csv’```: a comma-separated data table with the area and perimeter in both pixels2 and the selected measuring unit2 of the dentine.
+* ```‘ImageFileName_enamel.csv’```: a comma-separated data table with the area and perimeter in both pixels2 and the selected measuring unit2 of the enamel.
+* ```‘ImageFileName_FractalDimension.csv’```:  a comma-separated data table with the successive results of fractal dimensionality for the consecutive boxes bigger in size defined by the Fiji ‘Fractal Dimension’ plugin using box counting methods. It is important to mention that these values are not equivalent to previously published Fractal data.
+* ```‘ImageFileName_kmeans.csv’```: a comma-separated data table with the number of orientation patches resulting from the 2D orientation patch count (2D OPC), their mean orientation (in radians), the number of patches and the sum of their areas in pixels2.
+* ```‘ImageFileName_remainingTooth.csv’```: a comma-separated data table with the area and perimeter in both pixels2 and the selected measuring unit2 of the remaining tooth (no enamel no dentine).
+* ```‘ImageFileName_scale.csv’```: length of the scale included in the images in pixels.
+* ```‘ImageFileName_summary.csv’```: a summary of all the previous csv files for that specific image. It includes the following variables: Scale bar in both pixels and millimeters, occlusal enamel length (OEL), occlusal tooth area (OTA), occlusal enamel index (OEI), enamel index (EI), indentation index (D), 2D OPC, mean folding, total folding, mean thickness (pixels and millimeters). This table contains all the necessary information to quantify complexity by means of ‘folded’.
+
+## Additional analyses outside ‘folded’
+An R script ```‘folded.R’``` has been included in this Github repository. It merges all the csv data tables into one comprehensive matrix with all the specimens and includes all the necessary code to replicate the main figures and the statistical analyses used through this work. This R script is independent from ‘folded’ and is not required to run it.
