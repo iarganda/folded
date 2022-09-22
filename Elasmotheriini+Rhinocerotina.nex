@@ -1,0 +1,59 @@
+#NEXUS
+[Folded: a toolkit to describe mammalian herbivore dentition from 2D images. Oscar Sanisidro, Ignacio Arganda-Carreras, and Juan L. Cantalapiedra]
+BEGIN TREES;
+	Title 'Trees from "Elasmotheriini+Rhinocerotina.trees.nex"';
+	LINK Taxa = Untitled_Block_of_Taxa;
+	TRANSLATE
+[0] 		1 'Rhinoceros_unicornis',
+[1] 		2 'Rhinoceros_sondaicus',
+[2] 		3 'Dicerorhinus_sumatrensis',
+[3] 		4 'Diceros_bicornis',
+[4] 		5 'Coelodonta_antiquitatis',
+[5] 		6 'Ceratotherium_simum',
+[6] 		7 'Turkanatherium_acutirostratum',
+[7] 		8 'Chilotheridium_pattersoni',
+[8] 		9 'Victoriaceros_kenyensis',
+[9] 		10 'Hispanotherium_beonense',
+[10] 		11 'Hispanotherium_corcolense',
+[11] 		12 'Hispanotherium_matritense',
+[12] 		13 'Hispanotherium_tungurense',
+[13] 		14 'Iranotherium_morgani',
+[14] 		15 'Eoazara_xerrii',
+[15] 		16 'Parelasmotherium_linxiaense',
+[16] 		17 'Ningxiatherium_euryrhinus',
+[17] 		18 'Ningxiatherium_longirhinus',
+[18] 		19 'Elasmotherium_primigenium',
+[19] 		20 'Elasmotherium_caucasicum',
+[20] 		21 'Elasmotherium_sibiricum',
+[21] 		22 'Bugtirhinus_praecursor',
+[22] 		23 'Elasmotherium_peii',
+[23] 		24 'Caementodon_fangxiense',
+[24] 		25 'Menoceras_arikarense',
+[25] 		26 'Coelodonta_thibetana',
+[26] 		27 'Rhinoceros_platyrhinus',
+[27] 		28 'Stephanorhinus_hemitoechus',
+[28] 		29 'Stephanorhinus_hundsheimensis',
+[29] 		30 'Stephanorhinus_etruscus',
+[30] 		31 'Stephanorhinus_kirchbergensis',
+[31] 		32 'Stephanorhinus_jeanvireti',
+[32] 		33 'Pliorhinus_megarhinus',
+[33] 		34 'Lartetotherium_sansaniense',
+[34] 		35 'Coelodonta_tologoijensis',
+[35] 		36 'Diceros_gansuensis',
+[36] 		37 'Ceratotherium_mauritanicum',
+[37] 		38 'Diceros_praecox',
+[38] 		39 'Dihoplus_schleiermacheri',
+[39] 		40 'Miodiceros_neumayri',
+[40] 		41 'Dihoplus_pikermiensis',
+[41] 		42 'Elasmotherium_chaprovicum',
+[42] 		43 'Parelasmotherium_simplum',
+[43] 		44 'Ceratotherium_efficax',
+[44] 		45 'Diceros_douariensis',
+[45] 		46 'Procoelodonta_borissiaki',
+[46] 		47 'Procoelodonta_mongoliense';
+	TREE 'Elasmotheriina_informal_tree1++++' = ((25,(22,(7,((8,9),(24,(11,(10,(12,((46,47),(13,(14,(15,((17,18),((16,43),(19,(42,(23,(20,21)))))))))))))))))),((2,(1,27)),(34,((40,((37,(6,44)),(36,(45,(4,38))))),(3,((41,(33,39)),((26,(5,35)),(31,(32,(30,(28,29)))))))))));
+
+END;
+
+
+
