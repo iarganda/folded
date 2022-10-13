@@ -45,7 +45,7 @@ options(scipen=999)
   # WD <- "Proboscidea dataset" # Proboscidea in the Supplementary dataset
   # WD <- "2D vs 3D OPC dataset" # Comparison between 2D and 3D OPC in the Supplementary dataset
   
-  working_folder <- "C:/Users/Rhinocerotidae dataset" # ADD HERE THE PATH TO THE FOLDER WHERE ALL FOLDED IMAGES AND OUTPUT ARE. E.G.: 'C:/Users/Rhinocerotidae dataset'
+  working_folder <- "C:/Users/Rhinocerotidae dataset/Rhinocerotidae dataset" # ADD HERE THE PATH TO THE FOLDER WHERE ALL FOLDED IMAGES AND OUTPUT ARE. E.G.: 'C:/Users/Rhinocerotidae dataset'
   
   PlotInMM <- TRUE # plot ROI's in milimeters? (otherwise in pixels)
   PlotSpecimen <- FALSE # plot the tooth?
@@ -176,7 +176,7 @@ options(scipen=999)
       names(AreaPerimData) <- c('At (mm2)', 'Aocc (mm2)', 'Aen (mm2)', 'AenRel (Aen/Aocc)', 'Adentine (mm2)', 'Abasetooth (mm2)', 'Aocc (mm2)', 'AocclusRel (Aocc/At)', 'PerimTotal (mm)')
       AnalysisData <- c(At, Aocc, meanOrient, medianOrient, sdOrient, varOrient, totalEF, meanEF, sdEF, varEF, totalEF_At, meanEF_At, totalEF_Aocc, meanEF_Aocc, EF_Aocc, accumEF, 
                         mean_anis_x_thick, totalET, meanET, meanET_At, meanET_Perim, meanET_Aocc, sdET, varET, relET, FD, OPC2D, OPC2D_At, OPC2D_Aocc)
-      names(AnalysisData) <- c("At", "Aocc", "Mean orient(º)", "Median orient(º)", "SD orient", "variance orient", "totalEF", "meanEF", "sdEF", "varianceEF", "totalEF/At","meanEF/At","totalEF/Aocc","meanEF/Aocc", "EF/Aocc", "EFgain", 
+      names(AnalysisData) <- c("At", "Aocc", "Mean orient(\BA)", "Median orient(\BA)", "SD orient", "variance orient", "totalEF", "meanEF", "sdEF", "varianceEF", "totalEF/At","meanEF/At","totalEF/Aocc","meanEF/Aocc", "EF/Aocc", "EFgain", 
                                 "EF*ET", "totalET", "meanET", "meanET/At", "meanET/Perim", "meanET/Aocc", "sdET", "varianceET", "relativeET", "FD", "2D OPC", "2D OPC/At", "2D OPC/Aocc")
       AnalysisData <- unlist(AnalysisData)
     # Export tooth's parameters as csv
@@ -280,17 +280,24 @@ options(scipen=999)
     {
   # Variables to test
       SelectedVars_Matrix <- rbind(
-        c("log10_meanEF","At"),
-        c("log10_2D OPC","At"),
-        c("log10_meanET","At"),
-        c("log10_meanEF/At","log10_2D OPC/At"),
-        c("log10_2D OPC/At", "meanET/At"),
-        c("log10_meanEF/At", "meanET/At"),
-        # c("log10_meanEF/At","log10_At"),
-        # c("log10_2D OPC/At","log10_At"),
-        c("log10_meanEF/At","Hypsodonty"),
-        c("log10_2D OPC/At", "Hypsodonty"),
-        c("meanET/At","Hypsodonty")
+      c("log10_meanEF","At"),
+      c("log10_2D OPC","At"),
+      c("log10_meanET","At"),
+      c("log10_meanEF/At","At"),
+      c("log10_2D OPC/At","At"),
+      c("log10_meanET/At","At"),
+      c("log10_meanEF","log10_meanET"),
+      c("log10_2D OPC","log10_meanET"),
+      c("log10_2D OPC","log10_meanEF"),
+      c("log10_meanEF/At","log10_meanET/At"),
+      c("log10_2D OPC/At","log10_meanET/At"),
+      c("log10_2D OPC/At","log10_meanEF/At"),
+      c("log10_meanEF","Hypsodonty"),
+      c("log10_2D OPC","Hypsodonty"),
+      c("log10_meanET","Hypsodonty"),
+      c("log10_meanEF/At","Hypsodonty"),
+      c("log10_2D OPC/At","Hypsodonty"),
+      c("log10_meanET/At","Hypsodonty")
       )
       
   # Regressions
