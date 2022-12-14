@@ -9,7 +9,7 @@ Folded: an ImageJ/Fiji toolkit to describe mammalian herbivore dentition from 2D
 
 **Description video**:
 
-[![folded description video](https://img.youtube.com/vi/wCc2PEgCglk/0.jpg)](https://www.youtube.com/watch?v=wCc2PEgCglk "'folded': a toolkit to describe mammalian herbivore dentition from 2D images")
+[![folded description video](https://github.com/iarganda/folded/blob/main/images/documentation/folded-screenshot-youtube.png)](https://www.youtube.com/watch?v=wCc2PEgCglk "'folded': a toolkit to describe mammalian herbivore dentition from 2D images")
 
 ##### Table of Contents  
   * [Installation instructions](#installation-instructions)
