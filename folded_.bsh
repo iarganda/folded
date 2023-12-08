@@ -601,8 +601,10 @@ for( f = 0; f < pathnames.length; f++ )
 	intrinsicVolumes = algo.analyzeRegions( labeledRemTooth, labels, image.getCalibration() ); 
 	
 	table = new ResultsTable();
+	remainingToothArea = 0;
 	for( k = 0; k<intrinsicVolumes.length; k++ )
 	{
+		remainingToothArea += intrinsicVolumes[k].area;
 		table.incrementCounter();
 		table.addValue( "Area (pixel^2)", intrinsicVolumes[k].area );
 		table.addValue( "Perimeter (pixel)", intrinsicVolumes[k].perimeter );
@@ -615,7 +617,7 @@ for( f = 0; f < pathnames.length; f++ )
 	// Occlusal enamel length (OEL)
 	oel = totalBranchLength;
 	// Occlusal tooth area (OTA) 
-	ota = enamelArea + dentineArea;
+	ota = enamelArea + dentineArea + remainingToothArea;
 	// Occlusal Enamel Index (OEI) = OEL/√OTA
 	oei = oel / Math.sqrt( ota );
 	// Enamel Index (EI) EI = OEL/OTA
